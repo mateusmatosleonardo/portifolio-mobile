@@ -1,15 +1,49 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import Icon from 'react-native-vector-icons/Ionicons';
+
 import Home from './views/Home';
 import About from './views/About';
+import Portfolio from './views/Portfolio';
 
 const Tab = createBottomTabNavigator();
 
 export default function Routes() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="About" component={About} />
+    <Tab.Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        tabBarStyle: {backgroundColor: '#fafafa'},
+        tabBarActiveTintColor: '#222',
+        headerShown: false,
+      }}>
+      <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{
+          tabBarIcon: ({size, color}) => (
+            <Icon name="home-sharp" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="About"
+        component={About}
+        options={{
+          tabBarIcon: ({size, color}) => (
+            <Icon name="information-circle-sharp" size={size} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Porfolio"
+        component={Portfolio}
+        options={{
+          tabBarIcon: ({size, color}) => (
+            <Icon name="briefcase-sharp" size={size} color={color} />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 }
