@@ -4,7 +4,7 @@ import {View, Text} from 'react-native';
 const About = () => {
   return (
     <View>
-      <Text>About Screen</Text>
+      <Text style={{color: '#222'}}>About Screen</Text>
     </View>
   );
 };

@@ -13,9 +13,11 @@ export default function Routes() {
     <Tab.Navigator
       initialRouteName="Home"
       screenOptions={{
-        tabBarStyle: {backgroundColor: '#fafafa'},
-        tabBarActiveTintColor: '#222',
+        tabBarStyle: {backgroundColor: '#fafafa', height: 60, padding: 8},
+        tabBarActiveTintColor: '#ff0000',
         headerShown: false,
+        tabBarInactiveTintColor: '#777',
+        tabBarLabelStyle: {fontSize: 12, marginBottom: 4},
       }}>
       <Tab.Screen
         name="Home"
