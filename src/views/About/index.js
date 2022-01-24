@@ -1,6 +1,7 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, ScrollView} from 'react-native';
 import {scale} from 'react-native-size-matters';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const About = () => {
   return (
@@ -20,6 +21,50 @@ const About = () => {
       </View>
       <View style={styles.about}>
         <Text style={styles.btnMoreInfo}>More information</Text>
+        <ScrollView>
+          <View style={styles.viewTitle}>
+            <Text style={styles.expText}>Experience</Text>
+          </View>
+          <View>
+            <Icon name="briefcase-sharp" size={20} color={'#222'} />
+          </View>
+          <View style={styles.viewTitle}>
+            <Text style={styles.expText}>Experience</Text>
+          </View>
+          <View>
+            <Icon name="briefcase-sharp" size={20} color={'#222'} />
+          </View>
+          <View style={styles.viewTitle}>
+            <Text style={styles.expText}>Experience</Text>
+          </View>
+          <View>
+            <Icon name="briefcase-sharp" size={20} color={'#222'} />
+          </View>
+          <View style={styles.viewTitle}>
+            <Text style={styles.expText}>Experience</Text>
+          </View>
+          <View>
+            <Icon name="briefcase-sharp" size={20} color={'#222'} />
+          </View>
+          <View style={styles.viewTitle}>
+            <Text style={styles.expText}>Experience</Text>
+          </View>
+          <View>
+            <Icon name="briefcase-sharp" size={20} color={'#222'} />
+          </View>
+          <View style={styles.viewTitle}>
+            <Text style={styles.expText}>Experience</Text>
+          </View>
+          <View>
+            <Icon name="briefcase-sharp" size={20} color={'#222'} />
+          </View>
+          <View style={styles.viewTitle}>
+            <Text style={styles.expText}>Experience</Text>
+          </View>
+          <View>
+            <Icon name="briefcase-sharp" size={20} color={'#222'} />
+          </View>
+        </ScrollView>
       </View>
     </View>
   );
@@ -46,7 +91,7 @@ const styles = StyleSheet.create({
   },
   textAbout: {
     textAlign: 'center',
-    marginTop: 10,
+    marginTop: 20,
   },
   containerPhoto: {
     width: 100,
@@ -61,7 +106,9 @@ const styles = StyleSheet.create({
   },
   about: {
     flex: 6,
-    padding: 20,
+    paddingTop: 20,
+    paddingLeft: 20,
+    paddingRight: 20,
     backgroundColor: '#fafafa',
   },
   btnMoreInfo: {
@@ -73,6 +120,16 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
     borderRadius: 20,
+  },
+  expText: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#414040',
+    textAlign: 'center',
+  },
+  viewTitle: {
+    marginTop: 10,
+    marginBottom: 10,
   },
 });
 
