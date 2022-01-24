@@ -25,44 +25,9 @@ const About = () => {
           <View style={styles.viewTitle}>
             <Text style={styles.expText}>Experience</Text>
           </View>
-          <View>
-            <Icon name="briefcase-sharp" size={20} color={'#222'} />
-          </View>
-          <View style={styles.viewTitle}>
-            <Text style={styles.expText}>Experience</Text>
-          </View>
-          <View>
-            <Icon name="briefcase-sharp" size={20} color={'#222'} />
-          </View>
-          <View style={styles.viewTitle}>
-            <Text style={styles.expText}>Experience</Text>
-          </View>
-          <View>
-            <Icon name="briefcase-sharp" size={20} color={'#222'} />
-          </View>
-          <View style={styles.viewTitle}>
-            <Text style={styles.expText}>Experience</Text>
-          </View>
-          <View>
-            <Icon name="briefcase-sharp" size={20} color={'#222'} />
-          </View>
-          <View style={styles.viewTitle}>
-            <Text style={styles.expText}>Experience</Text>
-          </View>
-          <View>
-            <Icon name="briefcase-sharp" size={20} color={'#222'} />
-          </View>
-          <View style={styles.viewTitle}>
-            <Text style={styles.expText}>Experience</Text>
-          </View>
-          <View>
-            <Icon name="briefcase-sharp" size={20} color={'#222'} />
-          </View>
-          <View style={styles.viewTitle}>
-            <Text style={styles.expText}>Experience</Text>
-          </View>
-          <View>
-            <Icon name="briefcase-sharp" size={20} color={'#222'} />
+          <View style={styles.viewExp}>
+            <Icon name="briefcase-sharp" size={22} color={'#222'} />
+            <Text style={styles.titleExp}>Software enginner</Text>
           </View>
         </ScrollView>
       </View>
@@ -130,6 +95,17 @@ const styles = StyleSheet.create({
   viewTitle: {
     marginTop: 10,
     marginBottom: 10,
+  },
+  viewExp: {
+    flexDirection: 'row',
+    // backgroundColor: 'salmon',
+    alignItems: 'center',
+  },
+  titleExp: {
+    fontSize: 16,
+    color: '#414040',
+    marginLeft: 10,
+    marginRight: 10,
   },
 });
 
