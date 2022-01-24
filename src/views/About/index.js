@@ -13,9 +13,13 @@ const About = () => {
           />
         </View>
         <Text style={styles.textProfile}>Mateus Leonardo</Text>
+        <Text style={styles.textAbout}>
+          I have been a computer science student and front-end developer for
+          over 2 years.
+        </Text>
       </View>
       <View style={styles.about}>
-        <Text>About</Text>
+        <Text style={styles.btnMoreInfo}>More information</Text>
       </View>
     </View>
   );
@@ -40,6 +44,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginTop: 10,
   },
+  textAbout: {
+    textAlign: 'center',
+    marginTop: 10,
+  },
   containerPhoto: {
     width: 100,
     height: 100,
@@ -55,6 +63,16 @@ const styles = StyleSheet.create({
     flex: 6,
     padding: 20,
     backgroundColor: '#fafafa',
+  },
+  btnMoreInfo: {
+    width: 150,
+    fontSize: 14,
+    padding: 10,
+    color: '#fafafa',
+    backgroundColor: '#056',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    borderRadius: 20,
   },
 });
 
