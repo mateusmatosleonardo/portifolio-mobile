@@ -1,14 +1,32 @@
-import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import React, {useEffect} from 'react';
+import {View, Text, StyleSheet, Animated} from 'react-native';
 // ScrollView
 // import {scale} from 'react-native-size-matters';
 // import Icon from 'react-native-vector-icons/Ionicons';
 
 const Skeleton = () => {
+  const AnimatedValue = new Animated.Value(0);
+
+  const translateX = AnimatedValue.interpolate({
+    inputRange: [0, 1],
+    outputRange: [-10, 100],
+  });
+
   return (
     <View style={styles.container}>
       <View style={styles.profile}>
-        <View style={styles.containerPhoto} />
+        <View style={styles.containerPhoto}>
+          <Animated.View
+            // eslint-disable-next-line react-native/no-inline-styles
+            style={{
+              width: '30%',
+              height: '100%',
+              opacity: 0.5,
+              backgroundColor: '#fff',
+              transform: [{translateX: translateX}],
+            }}
+          />
+        </View>
         <View style={styles.textProfile} />
         <View style={styles.containerAbout} />
         <View style={styles.containerAboutTwo} />
@@ -114,11 +132,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#ECEFF1',
     borderRadius: 50,
   },
-  //   photo: {
-  //     width: '100%',
-  //     height: '100%',
-  //     borderRadius: 50,
-  //   },
   about: {
     flex: 6,
     paddingTop: 20,
