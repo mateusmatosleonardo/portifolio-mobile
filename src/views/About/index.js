@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image, ScrollView} from 'react-native';
-import {scale} from 'react-native-size-matters';
+// import {scale} from 'react-native-size-matters';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 const About = () => {
@@ -23,11 +23,25 @@ const About = () => {
         <Text style={styles.btnMoreInfo}>More information</Text>
         <ScrollView>
           <View style={styles.viewTitle}>
+            <Text style={styles.expText}>Education</Text>
+          </View>
+          <View style={styles.viewExp}>
+            <Icon name="book" size={22} color={'#222'} />
+            <Text style={styles.titleExp}>
+              Computer Science - <Text style={styles.textEmp}>Estácio</Text>{' '}
+            </Text>
+          </View>
+          <View style={styles.viewTitle}>
             <Text style={styles.expText}>Experience</Text>
           </View>
           <View style={styles.viewExp}>
             <Icon name="briefcase-sharp" size={22} color={'#222'} />
-            <Text style={styles.titleExp}>Software enginner</Text>
+            <Text style={styles.titleExp}>
+              Software enginner - <Text style={styles.textEmp}>Arkos</Text>{' '}
+            </Text>
+          </View>
+          <View>
+            <Text style={styles.textExp}>Function</Text>
           </View>
         </ScrollView>
       </View>
@@ -106,6 +120,13 @@ const styles = StyleSheet.create({
     color: '#414040',
     marginLeft: 10,
     marginRight: 10,
+  },
+  textExp: {
+    fontSize: 14,
+    color: '#414040',
+  },
+  textEmp: {
+    fontWeight: 'bold',
   },
 });
 
