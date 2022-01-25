@@ -1,24 +1,17 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 // ScrollView
 // import {scale} from 'react-native-size-matters';
 // import Icon from 'react-native-vector-icons/Ionicons';
 
-const About = () => {
+const Skeleton = () => {
   return (
     <View style={styles.container}>
       <View style={styles.profile}>
-        <View style={styles.containerPhoto}>
-          <Image
-            source={require('../../assets/images/me.jpg')}
-            style={styles.photo}
-          />
-        </View>
-        <Text style={styles.textProfile}>Mateus Leonardo</Text>
-        <Text style={styles.textAbout}>
-          I have been a computer science student and front-end developer for
-          over 2 years.
-        </Text>
+        <View style={styles.containerPhoto} />
+        <View style={styles.textProfile} />
+        <View style={styles.containerAbout} />
+        <View style={styles.containerAboutTwo} />
       </View>
       <View style={styles.about}>
         <Text style={styles.btnMoreInfo}>More information</Text>
@@ -108,25 +101,24 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 30,
   },
   textProfile: {
-    color: '#fff',
-    fontSize: 16,
+    width: 150,
+    height: 20,
+    borderRadius: 5,
+    backgroundColor: '#ECEFF1',
     marginTop: 10,
   },
-  textAbout: {
-    textAlign: 'center',
-    marginTop: 20,
-  },
+
   containerPhoto: {
     width: 100,
     height: 100,
-    // backgroundColor: '#fff',
-    // borderRadius: 50,
-  },
-  photo: {
-    width: '100%',
-    height: '100%',
+    backgroundColor: '#ECEFF1',
     borderRadius: 50,
   },
+  //   photo: {
+  //     width: '100%',
+  //     height: '100%',
+  //     borderRadius: 50,
+  //   },
   about: {
     flex: 6,
     paddingTop: 20,
@@ -136,12 +128,9 @@ const styles = StyleSheet.create({
   },
   btnMoreInfo: {
     width: 150,
-    fontSize: 14,
+    color: '#ECEFF1',
     padding: 10,
-    color: '#fafafa',
-    backgroundColor: '#056',
-    textAlign: 'center',
-    fontWeight: 'bold',
+    backgroundColor: '#ECEFF1',
     borderRadius: 20,
   },
   expText: {
@@ -180,6 +169,18 @@ const styles = StyleSheet.create({
   textEmp: {
     fontWeight: 'bold',
   },
+  containerAbout: {
+    width: '100%',
+    height: 10,
+    backgroundColor: '#ECEFF1',
+    marginTop: 20,
+  },
+  containerAboutTwo: {
+    width: '50%',
+    height: 10,
+    backgroundColor: '#ECEFF1',
+    marginTop: 10,
+  },
 });
 
-export default About;
+export default Skeleton;
