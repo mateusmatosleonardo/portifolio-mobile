@@ -4,104 +4,129 @@ import {View, Text, StyleSheet, Animated} from 'react-native';
 // import {scale} from 'react-native-size-matters';
 // import Icon from 'react-native-vector-icons/Ionicons';
 
-const Skeleton = () => {
+const Skeleton = ({visible, children}) => {
   const AnimatedValue = new Animated.Value(0);
+
+  useEffect(() => {
+    circleAnimated();
+
+    return () => {
+      circleAnimated();
+    };
+  }, []);
+
+  const circleAnimated = () => {
+    AnimatedValue.setValue(0);
+    Animated.timing(AnimatedValue, {
+      toValue: 1,
+      duration: 450,
+      useNativeDriver: false,
+    }).start(() => {
+      setTimeout(() => {
+        circleAnimated();
+      }, 1000);
+    });
+  };
 
   const translateX = AnimatedValue.interpolate({
     inputRange: [0, 1],
     outputRange: [-10, 100],
   });
 
-  return (
-    <View style={styles.container}>
-      <View style={styles.profile}>
-        <View style={styles.containerPhoto}>
-          <Animated.View
-            // eslint-disable-next-line react-native/no-inline-styles
-            style={{
-              width: '30%',
-              height: '100%',
-              opacity: 0.5,
-              backgroundColor: '#fff',
-              transform: [{translateX: translateX}],
-            }}
-          />
+  if (visible) {
+    return (
+      <View style={styles.container}>
+        <View style={styles.profile}>
+          <View style={styles.containerPhoto}>
+            <Animated.View
+              // eslint-disable-next-line react-native/no-inline-styles
+              style={{
+                width: '30%',
+                height: '100%',
+                opacity: 0.5,
+                backgroundColor: '#fff',
+                transform: [{translateX: translateX}],
+              }}
+            />
+          </View>
+          <View style={styles.textProfile} />
+          <View style={styles.containerAbout} />
+          <View style={styles.containerAboutTwo} />
         </View>
-        <View style={styles.textProfile} />
-        <View style={styles.containerAbout} />
-        <View style={styles.containerAboutTwo} />
+        <View style={styles.about}>
+          <Text style={styles.btnMoreInfo}>More information</Text>
+          {/* <ScrollView>
+            <View style={styles.viewTitle}>
+              <Text style={styles.expText}>Education</Text>
+            </View>
+            <View style={styles.viewEdu}>
+              <Icon name="book" size={22} color={'#222'} />
+              <Text style={styles.titleExp}>
+                Computer Science - <Text style={styles.textEmp}>Estácio</Text>{' '}
+              </Text>
+            </View>
+            <View style={styles.viewEdu}>
+              <Icon name="book" size={22} color={'#222'} />
+              <Text style={styles.titleExp}>
+                Informática - <Text style={styles.textEmp}>IBEP</Text>{' '}
+              </Text>
+            </View>
+            <View style={styles.viewEdu}>
+              <Icon name="book" size={22} color={'#222'} />
+              <Text style={styles.titleExp}>
+                Inglês - <Text style={styles.textEmp}>IBEP</Text>{' '}
+              </Text>
+            </View>
+            <View style={styles.viewTitle}>
+              <Text style={styles.expText}>Experience</Text>
+            </View>
+            <View style={styles.viewExp}>
+              <Icon name="briefcase-sharp" size={22} color={'#222'} />
+              <Text style={styles.titleExp}>
+                Software enginner - <Text style={styles.textEmp}>Arkos</Text>{' '}
+              </Text>
+            </View>
+            <View style={styles.viewTitle}>
+              <Text style={styles.expText}>Courses</Text>
+            </View>
+            <View style={styles.viewExp}>
+              <Icon name="ios-pencil" size={22} color={'#222'} />
+              <Text style={styles.titleExp}>
+                Front-End - <Text style={styles.textEmp}>Danki Code</Text>{' '}
+              </Text>
+            </View>
+            <View style={styles.viewExp}>
+              <Icon name="ios-pencil" size={22} color={'#222'} />
+              <Text style={styles.titleExp}>
+                JavaScript - <Text style={styles.textEmp}>Danki Code</Text>{' '}
+              </Text>
+            </View>
+            <View style={styles.viewExp}>
+              <Icon name="ios-pencil" size={22} color={'#222'} />
+              <Text style={styles.titleExp}>
+                JS Funcional e Reativo - <Text style={styles.textEmp}>Udemy</Text>{' '}
+              </Text>
+            </View>
+            <View style={styles.viewExp}>
+              <Icon name="ios-pencil" size={22} color={'#222'} />
+              <Text style={styles.titleExp}>
+                TypeScript - <Text style={styles.textEmp}>Udemy</Text>{' '}
+              </Text>
+            </View>
+            <View style={styles.viewExp}>
+              <Icon name="ios-pencil" size={22} color={'#222'} />
+              <Text style={styles.titleExp}>
+                Intro à computação quântica -{' '}
+                <Text style={styles.textEmp}>Udemy</Text>{' '}
+              </Text>
+            </View>
+          </ScrollView> */}
+        </View>
       </View>
-      <View style={styles.about}>
-        <Text style={styles.btnMoreInfo}>More information</Text>
-        {/* <ScrollView>
-          <View style={styles.viewTitle}>
-            <Text style={styles.expText}>Education</Text>
-          </View>
-          <View style={styles.viewEdu}>
-            <Icon name="book" size={22} color={'#222'} />
-            <Text style={styles.titleExp}>
-              Computer Science - <Text style={styles.textEmp}>Estácio</Text>{' '}
-            </Text>
-          </View>
-          <View style={styles.viewEdu}>
-            <Icon name="book" size={22} color={'#222'} />
-            <Text style={styles.titleExp}>
-              Informática - <Text style={styles.textEmp}>IBEP</Text>{' '}
-            </Text>
-          </View>
-          <View style={styles.viewEdu}>
-            <Icon name="book" size={22} color={'#222'} />
-            <Text style={styles.titleExp}>
-              Inglês - <Text style={styles.textEmp}>IBEP</Text>{' '}
-            </Text>
-          </View>
-          <View style={styles.viewTitle}>
-            <Text style={styles.expText}>Experience</Text>
-          </View>
-          <View style={styles.viewExp}>
-            <Icon name="briefcase-sharp" size={22} color={'#222'} />
-            <Text style={styles.titleExp}>
-              Software enginner - <Text style={styles.textEmp}>Arkos</Text>{' '}
-            </Text>
-          </View>
-          <View style={styles.viewTitle}>
-            <Text style={styles.expText}>Courses</Text>
-          </View>
-          <View style={styles.viewExp}>
-            <Icon name="ios-pencil" size={22} color={'#222'} />
-            <Text style={styles.titleExp}>
-              Front-End - <Text style={styles.textEmp}>Danki Code</Text>{' '}
-            </Text>
-          </View>
-          <View style={styles.viewExp}>
-            <Icon name="ios-pencil" size={22} color={'#222'} />
-            <Text style={styles.titleExp}>
-              JavaScript - <Text style={styles.textEmp}>Danki Code</Text>{' '}
-            </Text>
-          </View>
-          <View style={styles.viewExp}>
-            <Icon name="ios-pencil" size={22} color={'#222'} />
-            <Text style={styles.titleExp}>
-              JS Funcional e Reativo - <Text style={styles.textEmp}>Udemy</Text>{' '}
-            </Text>
-          </View>
-          <View style={styles.viewExp}>
-            <Icon name="ios-pencil" size={22} color={'#222'} />
-            <Text style={styles.titleExp}>
-              TypeScript - <Text style={styles.textEmp}>Udemy</Text>{' '}
-            </Text>
-          </View>
-          <View style={styles.viewExp}>
-            <Icon name="ios-pencil" size={22} color={'#222'} />
-            <Text style={styles.titleExp}>
-              Intro à computação quântica -{' '}
-              <Text style={styles.textEmp}>Udemy</Text>{' '}
-            </Text>
-          </View>
-        </ScrollView> */}
-      </View>
-    </View>
-  );
+    );
+  }
+
+  return <>{children}</>;
 };
 
 const styles = StyleSheet.create({
@@ -124,6 +149,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     backgroundColor: '#ECEFF1',
     marginTop: 10,
+    overflow: 'hidden',
   },
 
   containerPhoto: {
@@ -131,6 +157,7 @@ const styles = StyleSheet.create({
     height: 100,
     backgroundColor: '#ECEFF1',
     borderRadius: 50,
+    overflow: 'hidden',
   },
   about: {
     flex: 6,
@@ -145,6 +172,7 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: '#ECEFF1',
     borderRadius: 20,
+    overflow: 'hidden',
   },
   expText: {
     fontSize: 22,
@@ -187,12 +215,14 @@ const styles = StyleSheet.create({
     height: 10,
     backgroundColor: '#ECEFF1',
     marginTop: 20,
+    overflow: 'hidden',
   },
   containerAboutTwo: {
     width: '50%',
     height: 10,
     backgroundColor: '#ECEFF1',
     marginTop: 10,
+    overflow: 'hidden',
   },
 });
 

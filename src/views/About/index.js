@@ -1,28 +1,38 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
+import Skeleton from '../Skeleton';
 // ScrollView
 // import {scale} from 'react-native-size-matters';
 // import Icon from 'react-native-vector-icons/Ionicons';
 
 const About = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let timer = setInterval(() => {
+      setLoading(false);
+    }, 3000);
+  });
+
   return (
-    <View style={styles.container}>
-      <View style={styles.profile}>
-        <View style={styles.containerPhoto}>
-          <Image
-            source={require('../../assets/images/me.jpg')}
-            style={styles.photo}
-          />
+    <Skeleton visible={loading}>
+      <View style={styles.container}>
+        <View style={styles.profile}>
+          <View style={styles.containerPhoto}>
+            <Image
+              source={require('../../assets/images/me.jpg')}
+              style={styles.photo}
+            />
+          </View>
+          <Text style={styles.textProfile}>Mateus Leonardo</Text>
+          <Text style={styles.textAbout}>
+            I have been a computer science student and front-end developer for
+            over 2 years.
+          </Text>
         </View>
-        <Text style={styles.textProfile}>Mateus Leonardo</Text>
-        <Text style={styles.textAbout}>
-          I have been a computer science student and front-end developer for
-          over 2 years.
-        </Text>
-      </View>
-      <View style={styles.about}>
-        <Text style={styles.btnMoreInfo}>More information</Text>
-        {/* <ScrollView>
+        <View style={styles.about}>
+          <Text style={styles.btnMoreInfo}>More information</Text>
+          {/* <ScrollView>
           <View style={styles.viewTitle}>
             <Text style={styles.expText}>Education</Text>
           </View>
@@ -88,8 +98,9 @@ const About = () => {
             </Text>
           </View>
         </ScrollView> */}
+        </View>
       </View>
-    </View>
+    </Skeleton>
   );
 };
 
