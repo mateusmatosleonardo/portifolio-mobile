@@ -33,6 +33,34 @@ const About = () => {
         <View style={styles.about}>
           <Text style={styles.btnMoreInfo}>Mais informações</Text>
           <ScrollView>
+            <Text style={styles.titleInformation}>Contato</Text>
+            <View style={styles.centerInformation}>
+              <Icon name="location-outline" size={28} color={'#056'} />
+              <Text style={styles.textInformation}>Itapipoca - CE</Text>
+            </View>
+            <View style={styles.centerInformation}>
+              <Icon name="mail-outline" size={28} color={'#056'} />
+              <Text style={styles.textInformation}>m4teusmatos@gmail.com</Text>
+            </View>
+            <View style={styles.centerInformation}>
+              <Icon name="ios-call-outline" size={28} color={'#056'} />
+              <Text style={styles.textInformation}>+55 (88)981890344</Text>
+            </View>
+            <Text style={styles.titleInformation}>Contato</Text>
+            <View style={styles.centerInformation}>
+              <Icon name="location-outline" size={28} color={'#056'} />
+              <Text style={styles.textInformation}>Itapipoca - CE</Text>
+            </View>
+            <View style={styles.centerInformation}>
+              <Icon name="mail-outline" size={28} color={'#056'} />
+              <Text style={styles.textInformation}>m4teusmatos@gmail.com</Text>
+            </View>
+            <View style={styles.centerInformation}>
+              <Icon name="ios-call-outline" size={28} color={'#056'} />
+              <Text style={styles.textInformation}>+55 (88)981890344</Text>
+            </View>
+          </ScrollView>
+          {/* <ScrollView>
             <View style={styles.viewTitle}>
               <Text style={styles.expText}>Educação</Text>
             </View>
@@ -98,7 +126,7 @@ const About = () => {
                 <Text style={styles.textEmp}>Udemy</Text>{' '}
               </Text>
             </View>
-          </ScrollView>
+          </ScrollView> */}
         </View>
       </View>
     </Skeleton>
@@ -123,6 +151,7 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 16,
     marginTop: 10,
+    fontFamily: 'Montserrat-Bold',
   },
   textAbout: {
     textAlign: 'center',
@@ -191,6 +220,23 @@ const styles = StyleSheet.create({
   },
   textEmp: {
     fontWeight: 'bold',
+  },
+  centerInformation: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 10,
+    backgroundColor: '#ccc',
+  },
+  titleInformation: {
+    fontSize: 20,
+    fontFamily: 'Poppins-Medium',
+    color: '#056',
+  },
+  textInformation: {
+    color: '#313030',
+    fontSize: 15,
+    fontFamily: 'Poppins-Medium',
+    marginLeft: 6,
   },
 });
 
