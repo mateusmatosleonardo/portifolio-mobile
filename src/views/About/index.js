@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, ScrollView} from 'react-native';
 import Skeleton from '../Skeleton';
+import Icon from 'react-native-vector-icons/Ionicons';
 // ScrollView
 // import {scale} from 'react-native-size-matters';
-// import Icon from 'react-native-vector-icons/Ionicons';
 
 const About = () => {
   const [loading, setLoading] = useState(true);
@@ -26,78 +26,79 @@ const About = () => {
           </View>
           <Text style={styles.textProfile}>Mateus Leonardo</Text>
           <Text style={styles.textAbout}>
-            I have been a computer science student and front-end developer for
-            over 2 years.
+            Estudante de ciência da computação e desenvolvedor front-end há mais
+            de 2 anos
           </Text>
         </View>
         <View style={styles.about}>
-          <Text style={styles.btnMoreInfo}>More information</Text>
-          {/* <ScrollView>
-          <View style={styles.viewTitle}>
-            <Text style={styles.expText}>Education</Text>
-          </View>
-          <View style={styles.viewEdu}>
-            <Icon name="book" size={22} color={'#222'} />
-            <Text style={styles.titleExp}>
-              Computer Science - <Text style={styles.textEmp}>Estácio</Text>{' '}
-            </Text>
-          </View>
-          <View style={styles.viewEdu}>
-            <Icon name="book" size={22} color={'#222'} />
-            <Text style={styles.titleExp}>
-              Informática - <Text style={styles.textEmp}>IBEP</Text>{' '}
-            </Text>
-          </View>
-          <View style={styles.viewEdu}>
-            <Icon name="book" size={22} color={'#222'} />
-            <Text style={styles.titleExp}>
-              Inglês - <Text style={styles.textEmp}>IBEP</Text>{' '}
-            </Text>
-          </View>
-          <View style={styles.viewTitle}>
-            <Text style={styles.expText}>Experience</Text>
-          </View>
-          <View style={styles.viewExp}>
-            <Icon name="briefcase-sharp" size={22} color={'#222'} />
-            <Text style={styles.titleExp}>
-              Software enginner - <Text style={styles.textEmp}>Arkos</Text>{' '}
-            </Text>
-          </View>
-          <View style={styles.viewTitle}>
-            <Text style={styles.expText}>Courses</Text>
-          </View>
-          <View style={styles.viewExp}>
-            <Icon name="ios-pencil" size={22} color={'#222'} />
-            <Text style={styles.titleExp}>
-              Front-End - <Text style={styles.textEmp}>Danki Code</Text>{' '}
-            </Text>
-          </View>
-          <View style={styles.viewExp}>
-            <Icon name="ios-pencil" size={22} color={'#222'} />
-            <Text style={styles.titleExp}>
-              JavaScript - <Text style={styles.textEmp}>Danki Code</Text>{' '}
-            </Text>
-          </View>
-          <View style={styles.viewExp}>
-            <Icon name="ios-pencil" size={22} color={'#222'} />
-            <Text style={styles.titleExp}>
-              JS Funcional e Reativo - <Text style={styles.textEmp}>Udemy</Text>{' '}
-            </Text>
-          </View>
-          <View style={styles.viewExp}>
-            <Icon name="ios-pencil" size={22} color={'#222'} />
-            <Text style={styles.titleExp}>
-              TypeScript - <Text style={styles.textEmp}>Udemy</Text>{' '}
-            </Text>
-          </View>
-          <View style={styles.viewExp}>
-            <Icon name="ios-pencil" size={22} color={'#222'} />
-            <Text style={styles.titleExp}>
-              Intro à computação quântica -{' '}
-              <Text style={styles.textEmp}>Udemy</Text>{' '}
-            </Text>
-          </View>
-        </ScrollView> */}
+          <Text style={styles.btnMoreInfo}>Mais informações</Text>
+          <ScrollView>
+            <View style={styles.viewTitle}>
+              <Text style={styles.expText}>Educação</Text>
+            </View>
+            <View style={styles.viewEdu}>
+              <Icon name="book" size={22} color={'#222'} />
+              <Text style={styles.titleExp}>
+                Computer Science - <Text style={styles.textEmp}>Estácio</Text>{' '}
+              </Text>
+            </View>
+            <View style={styles.viewEdu}>
+              <Icon name="book" size={22} color={'#222'} />
+              <Text style={styles.titleExp}>
+                Informática - <Text style={styles.textEmp}>IBEP</Text>{' '}
+              </Text>
+            </View>
+            <View style={styles.viewEdu}>
+              <Icon name="book" size={22} color={'#222'} />
+              <Text style={styles.titleExp}>
+                Inglês - <Text style={styles.textEmp}>IBEP</Text>{' '}
+              </Text>
+            </View>
+            <View style={styles.viewTitle}>
+              <Text style={styles.expText}>Experience</Text>
+            </View>
+            <View style={styles.viewExp}>
+              <Icon name="briefcase-sharp" size={22} color={'#222'} />
+              <Text style={styles.titleExp}>
+                Software enginner - <Text style={styles.textEmp}>Arkos</Text>{' '}
+              </Text>
+            </View>
+            <View style={styles.viewTitle}>
+              <Text style={styles.expText}>Courses</Text>
+            </View>
+            <View style={styles.viewExp}>
+              <Icon name="ios-pencil" size={22} color={'#222'} />
+              <Text style={styles.titleExp}>
+                Front-End - <Text style={styles.textEmp}>Danki Code</Text>{' '}
+              </Text>
+            </View>
+            <View style={styles.viewExp}>
+              <Icon name="ios-pencil" size={22} color={'#222'} />
+              <Text style={styles.titleExp}>
+                JavaScript - <Text style={styles.textEmp}>Danki Code</Text>{' '}
+              </Text>
+            </View>
+            <View style={styles.viewExp}>
+              <Icon name="ios-pencil" size={22} color={'#222'} />
+              <Text style={styles.titleExp}>
+                JS Funcional e Reativo -{' '}
+                <Text style={styles.textEmp}>Udemy</Text>{' '}
+              </Text>
+            </View>
+            <View style={styles.viewExp}>
+              <Icon name="ios-pencil" size={22} color={'#222'} />
+              <Text style={styles.titleExp}>
+                TypeScript - <Text style={styles.textEmp}>Udemy</Text>{' '}
+              </Text>
+            </View>
+            <View style={styles.viewExp}>
+              <Icon name="ios-pencil" size={22} color={'#222'} />
+              <Text style={styles.titleExp}>
+                Intro à computação quântica -{' '}
+                <Text style={styles.textEmp}>Udemy</Text>{' '}
+              </Text>
+            </View>
+          </ScrollView>
         </View>
       </View>
     </Skeleton>
