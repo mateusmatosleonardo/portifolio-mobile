@@ -29,7 +29,7 @@ export default function Routes() {
         }}
       />
       <Tab.Screen
-        name="About"
+        name="Sobre"
         component={About}
         options={{
           tabBarIcon: ({size, color}) => (
@@ -38,11 +38,11 @@ export default function Routes() {
         }}
       />
       <Tab.Screen
-        name="Porfolio"
+        name="Habilidades"
         component={Portfolio}
         options={{
           tabBarIcon: ({size, color}) => (
-            <Icon name="briefcase-sharp" size={size} color={color} />
+            <Icon name="code-slash" size={size} color={color} />
           ),
         }}
       />

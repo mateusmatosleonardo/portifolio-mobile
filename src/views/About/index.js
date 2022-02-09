@@ -1,5 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, StyleSheet, Image, ScrollView} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 import Skeleton from '../Skeleton';
 import Icon from 'react-native-vector-icons/Ionicons';
 // ScrollView
@@ -32,32 +39,54 @@ const About = () => {
         </View>
         <View style={styles.about}>
           <Text style={styles.btnMoreInfo}>Mais informações</Text>
-          <ScrollView>
+          <ScrollView overScrollMode="never">
             <Text style={styles.titleInformation}>Contato</Text>
             <View style={styles.centerInformation}>
-              <Icon name="location-outline" size={28} color={'#056'} />
+              <Icon name="location-outline" size={25} color={'#056'} />
               <Text style={styles.textInformation}>Itapipoca - CE</Text>
             </View>
             <View style={styles.centerInformation}>
-              <Icon name="mail-outline" size={28} color={'#056'} />
+              <Icon name="mail-outline" size={25} color={'#056'} />
               <Text style={styles.textInformation}>m4teusmatos@gmail.com</Text>
             </View>
             <View style={styles.centerInformation}>
-              <Icon name="ios-call-outline" size={28} color={'#056'} />
+              <Icon name="ios-call-outline" size={25} color={'#056'} />
               <Text style={styles.textInformation}>+55 (88)981890344</Text>
             </View>
-            <Text style={styles.titleInformation}>Contato</Text>
+
+            <TouchableOpacity style={styles.touch}>
+              <Text style={styles.btnContact}>Entre em contato</Text>
+            </TouchableOpacity>
+
+            <Text style={styles.titleInformation}>Interesses</Text>
             <View style={styles.centerInformation}>
-              <Icon name="location-outline" size={28} color={'#056'} />
-              <Text style={styles.textInformation}>Itapipoca - CE</Text>
+              <Icon name="headset-outline" size={25} color={'#056'} />
+              <Text style={styles.textInformation}>Músicas</Text>
             </View>
             <View style={styles.centerInformation}>
-              <Icon name="mail-outline" size={28} color={'#056'} />
-              <Text style={styles.textInformation}>m4teusmatos@gmail.com</Text>
+              <Icon name="book-outline" size={25} color={'#056'} />
+              <Text style={styles.textInformation}>Ler e estudar</Text>
             </View>
             <View style={styles.centerInformation}>
-              <Icon name="ios-call-outline" size={28} color={'#056'} />
-              <Text style={styles.textInformation}>+55 (88)981890344</Text>
+              <Icon name="terminal-outline" size={25} color={'#056'} />
+              <Text style={styles.textInformation}>Programar</Text>
+            </View>
+            <View style={styles.centerInformation}>
+              <Icon name="game-controller-outline" size={25} color={'#056'} />
+              <Text style={styles.textInformation}>Jogar</Text>
+            </View>
+            <Text style={styles.titleInformation}>Social</Text>
+            <View style={styles.centerInformation}>
+              <Icon name="logo-linkedin" size={25} color={'#056'} />
+              <Text style={styles.textInformation}>Mateus Matos</Text>
+            </View>
+            <View style={styles.centerInformation}>
+              <Icon name="logo-facebook" size={25} color={'#056'} />
+              <Text style={styles.textInformation}>Mateus Matos</Text>
+            </View>
+            <View style={styles.centerInformation}>
+              <Icon name="logo-github" size={25} color={'#056'} />
+              <Text style={styles.textInformation}>@mateusmatosleonardo</Text>
             </View>
           </ScrollView>
           {/* <ScrollView>
@@ -225,10 +254,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingVertical: 10,
-    backgroundColor: '#ccc',
   },
   titleInformation: {
     fontSize: 20,
+    paddingVertical: 6,
     fontFamily: 'Poppins-Medium',
     color: '#056',
   },
@@ -237,6 +266,19 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontFamily: 'Poppins-Medium',
     marginLeft: 6,
+  },
+  btnContact: {
+    width: 120,
+    maxWidth: 120,
+    textAlign: 'center',
+    textDecorationLine: 'underline',
+    fontSize: 12,
+    fontFamily: 'Poppins-Medium',
+    color: '#056',
+  },
+  touch: {
+    maxWidth: 120,
+    width: 120,
   },
 });
 
