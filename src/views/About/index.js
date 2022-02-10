@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import Skeleton from '../Skeleton';
 import Icon from 'react-native-vector-icons/Ionicons';
+import ModalContact from '../../components/Modal/Modal';
 // ScrollView
 // import {scale} from 'react-native-size-matters';
 
@@ -90,6 +91,7 @@ const About = () => {
             </View>
           </ScrollView>
         </View>
+        <ModalContact />
       </View>
     </Skeleton>
   );
