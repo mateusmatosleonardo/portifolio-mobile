@@ -22,6 +22,8 @@ const About = () => {
     }, 3000);
   });
 
+  const [isVisible, setIsVisible] = useState(false);
+
   return (
     <Skeleton visible={loading}>
       <View style={styles.container}>
@@ -55,7 +57,9 @@ const About = () => {
               <Text style={styles.textInformation}>+55 (88)981890344</Text>
             </View>
 
-            <TouchableOpacity style={styles.touch}>
+            <TouchableOpacity
+              style={styles.touch}
+              onPress={() => setIsVisible(true)}>
               <Text style={styles.btnContact}>Entre em contato</Text>
             </TouchableOpacity>
 
@@ -91,7 +95,7 @@ const About = () => {
             </View>
           </ScrollView>
         </View>
-        <ModalContact />
+        <ModalContact isVisible={isVisible} setIsVisible={setIsVisible} />
       </View>
     </Skeleton>
   );
