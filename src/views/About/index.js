@@ -39,7 +39,7 @@ const About = () => {
         </View>
         <View style={styles.about}>
           <Text style={styles.btnMoreInfo}>Mais informações</Text>
-          <ScrollView overScrollMode="never">
+          <ScrollView overScrollMode="never" persistentScrollbar={true}>
             <Text style={styles.titleInformation}>Contato</Text>
             <View style={styles.centerInformation}>
               <Icon name="location-outline" size={25} color={'#056'} />
@@ -89,73 +89,6 @@ const About = () => {
               <Text style={styles.textInformation}>@mateusmatosleonardo</Text>
             </View>
           </ScrollView>
-          {/* <ScrollView>
-            <View style={styles.viewTitle}>
-              <Text style={styles.expText}>Educação</Text>
-            </View>
-            <View style={styles.viewEdu}>
-              <Icon name="book" size={22} color={'#222'} />
-              <Text style={styles.titleExp}>
-                Computer Science - <Text style={styles.textEmp}>Estácio</Text>{' '}
-              </Text>
-            </View>
-            <View style={styles.viewEdu}>
-              <Icon name="book" size={22} color={'#222'} />
-              <Text style={styles.titleExp}>
-                Informática - <Text style={styles.textEmp}>IBEP</Text>{' '}
-              </Text>
-            </View>
-            <View style={styles.viewEdu}>
-              <Icon name="book" size={22} color={'#222'} />
-              <Text style={styles.titleExp}>
-                Inglês - <Text style={styles.textEmp}>IBEP</Text>{' '}
-              </Text>
-            </View>
-            <View style={styles.viewTitle}>
-              <Text style={styles.expText}>Experience</Text>
-            </View>
-            <View style={styles.viewExp}>
-              <Icon name="briefcase-sharp" size={22} color={'#222'} />
-              <Text style={styles.titleExp}>
-                Software enginner - <Text style={styles.textEmp}>Arkos</Text>{' '}
-              </Text>
-            </View>
-            <View style={styles.viewTitle}>
-              <Text style={styles.expText}>Courses</Text>
-            </View>
-            <View style={styles.viewExp}>
-              <Icon name="ios-pencil" size={22} color={'#222'} />
-              <Text style={styles.titleExp}>
-                Front-End - <Text style={styles.textEmp}>Danki Code</Text>{' '}
-              </Text>
-            </View>
-            <View style={styles.viewExp}>
-              <Icon name="ios-pencil" size={22} color={'#222'} />
-              <Text style={styles.titleExp}>
-                JavaScript - <Text style={styles.textEmp}>Danki Code</Text>{' '}
-              </Text>
-            </View>
-            <View style={styles.viewExp}>
-              <Icon name="ios-pencil" size={22} color={'#222'} />
-              <Text style={styles.titleExp}>
-                JS Funcional e Reativo -{' '}
-                <Text style={styles.textEmp}>Udemy</Text>{' '}
-              </Text>
-            </View>
-            <View style={styles.viewExp}>
-              <Icon name="ios-pencil" size={22} color={'#222'} />
-              <Text style={styles.titleExp}>
-                TypeScript - <Text style={styles.textEmp}>Udemy</Text>{' '}
-              </Text>
-            </View>
-            <View style={styles.viewExp}>
-              <Icon name="ios-pencil" size={22} color={'#222'} />
-              <Text style={styles.titleExp}>
-                Intro à computação quântica -{' '}
-                <Text style={styles.textEmp}>Udemy</Text>{' '}
-              </Text>
-            </View>
-          </ScrollView> */}
         </View>
       </View>
     </Skeleton>
