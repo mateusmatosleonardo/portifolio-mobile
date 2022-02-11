@@ -42,7 +42,34 @@ const About = () => {
         </View>
         <View style={styles.about}>
           <Text style={styles.btnMoreInfo}>Mais informações</Text>
-          <ScrollView overScrollMode="never" persistentScrollbar={true}>
+          <ScrollView
+            overScrollMode="never"
+            showsVerticalScrollIndicator={false}>
+            <Text style={styles.textLorem}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed
+              venenatis dui, nec fermentum erat. Etiam vel metus purus. Aliquam
+              nisl metus, tincidunt venenatis lectus vel, mattis sodales ligula.
+              Sed at ornare libero. Proin varius purus vel sapien interdum
+              tristique. Maecenas finibus ligula vel nisi finibus pretium.
+              Aliquam quam mi, viverra et purus et, gravida elementum felis. Ut
+              maximus orci quis tortor imperdiet euismod. Pellentesque tristique
+              volutpat elit non rutrum. Integer luctus erat quis vulputate
+              pulvinar. Sed orci risus, dapibus fermentum iaculis eu, lacinia
+              eget nunc. Fusce sem nunc, pretium id risus quis, eleifend
+              porttitor augue. Aenean sollicitudin pulvinar ante et iaculis.
+              Quisque placerat interdum odio sit amet semper. Praesent ornare
+              aliquet elit, id sagittis lorem semper in. Cras urna nibh, cursus
+              at consectetur ut, malesuada eget tellus. Nam rhoncus, odio nec
+              mollis vehicula, arcu eros consectetur ex, eget sollicitudin enim
+              dui ut magna. Quisque ac mauris congue, hendrerit velit non,
+              mattis odio. Curabitur tempor magna vitae quam fermentum lacinia.
+              Vestibulum ut magna at tellus ultrices imperdiet ut et arcu. Donec
+              feugiat tincidunt porta. Ut ac risus sit amet nibh sagittis tempor
+              consequat ut mauris.
+            </Text>
+          </ScrollView>
+
+          {/* <ScrollView overScrollMode="never" persistentScrollbar={true}>
             <Text style={styles.titleInformation}>Contato</Text>
             <View style={styles.centerInformation}>
               <Icon name="location-outline" size={25} color={'#056'} />
@@ -93,7 +120,7 @@ const About = () => {
               <Icon name="logo-github" size={25} color={'#056'} />
               <Text style={styles.textInformation}>@mateusmatosleonardo</Text>
             </View>
-          </ScrollView>
+          </ScrollView> */}
         </View>
         <ModalContact isVisible={isVisible} setIsVisible={setIsVisible} />
       </View>
@@ -218,6 +245,13 @@ const styles = StyleSheet.create({
   touch: {
     maxWidth: 120,
     width: 120,
+  },
+  textLorem: {
+    color: '#313030',
+    fontSize: 14,
+    fontFamily: 'Poppins-Medium',
+    textAlign: 'left',
+    marginTop: 10,
   },
 });
 
